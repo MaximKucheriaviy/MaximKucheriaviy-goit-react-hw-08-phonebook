@@ -49,7 +49,7 @@ export const deleteContact = createAsyncThunk("contacts/deleteContact", async (i
 export const createNewUser = createAsyncThunk("user/createNewUser", async (reqest, tunkAPI) => {
     try{
         const response = await API.signUp(reqest);
-        return response;
+        return response.data;
     }
     catch(e){
         return tunkAPI.rejectWithValue(e);

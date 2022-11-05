@@ -105,7 +105,7 @@ export const userSlice = createSlice({
                 state.error = "Помилка серверу"    
             break;
             default:
-                state.error = "Невыдома помилка"
+                state.error = "Невідома помилка"
             }
         },
         [loginUser.pending](state, action){
@@ -126,7 +126,7 @@ export const userSlice = createSlice({
                 state.error = "Помилка серверу"    
             break;
             default:
-                state.error = "Невыдома помилка"
+                state.error = "Невідома помилка"
             } 
         },
     }

@@ -7,11 +7,11 @@ export const ContactsList = ({contacts, deleteContact}) => {
     <ContactList>
       {contacts.map(item => {
         return(
-          <li key={item.id}>
-            <span>{item.name}:</span> 
-            <span>{item.number}</span> 
-            <button onClick={() => {deleteContact(item.id)}}>delete</button>
-          </li>
+          <tr>
+            <td>{item.name}:</td> 
+            <td>{item.number}</td> 
+            <td><button onClick={() => {deleteContact(item.id)}}>delete</button></td>
+          </tr>
         )
       })}
     </ContactList>

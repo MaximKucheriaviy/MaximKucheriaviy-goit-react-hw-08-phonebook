@@ -51,7 +51,7 @@ export const LogIn = () => {
                 value={mail}
                 onChange={chageHendled}
             />
-            <label htmlFor={passwordID}>Password</label>
+            <label htmlFor={passwordID}>Пароль</label>
             <input 
                 type="password" 
                 id={passwordID}

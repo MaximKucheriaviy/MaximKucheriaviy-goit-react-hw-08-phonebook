@@ -55,7 +55,7 @@ export const Contacts = () => {
 
     return <StyledMain>
         <div className="container">
-            <h1>Електронний записник контактів</h1>
+            <h2>Список контактів</h2>
             <div className="contactLayout">
                 <div>
                     <FindContactForm setFilter={setFilter}/>

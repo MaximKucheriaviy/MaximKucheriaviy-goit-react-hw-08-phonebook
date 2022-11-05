@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledMain = styled.main`
     & h1{
+        margin-top: 50px;
 
         font-family: 'Montserrat';
         font-style: normal;
@@ -11,20 +12,70 @@ export const StyledMain = styled.main`
 
         text-align: center;
     }
+
+    & .subtitle{
+        margin-top: 60px;
+        text-align: center;
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    & .about{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 222px;
+        margin-top: 43px;
+        & li{
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 24px;
+            &:not(:last-child){
+                margin-bottom: 30px;
+            }
+            &::before{
+                content: "";
+                width: 20px;
+                height: 18px;
+                display: inline-flex;
+                background-color: ${props => props.theme.primaryColor};
+                border-radius: 50%;
+                margin-right: 18px;
+            }
+        }
+    }
+
     & .userForm{
         width: 414px;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 187px;
+        margin-top: 100px;
         
         & input{
+            box-sizing: border-box;
             display: block;
             width: 100%;
-            height: 62px;
+            height: 40px;
             margin-top: 24px;
+            padding-left: 20px;
+
             border-radius: 100px;
             border: none;
             background-color: white;
+
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 30px;
         }
 
         & label{

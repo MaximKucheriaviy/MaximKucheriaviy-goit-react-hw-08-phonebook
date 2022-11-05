@@ -49,7 +49,7 @@ export const SignUp = () => {
 
     return <StyledMain>
     <form className="userForm" onSubmit={submitHendler}>
-        <label htmlFor={nameID}>Name</label>
+        <label htmlFor={nameID}>Ім'я</label>
         <input 
             type="text" 
             id={nameID}
@@ -65,7 +65,7 @@ export const SignUp = () => {
             value={mail}
             onChange={chageHendled}
         />
-        <label htmlFor={passwordID}>Password</label>
+        <label htmlFor={passwordID}>Пароль</label>
         <input 
             type="password" 
             id={passwordID}
