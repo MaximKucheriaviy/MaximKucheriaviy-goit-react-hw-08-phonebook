@@ -4,7 +4,7 @@ import photo from "../imagers/contacts.png"
 export const Main = () => {
     return <StyledMain>
        <h1>Електронний записник контактів</h1>
-       <p className="subtitle">Створи свій власний записаник  контактів</p>
+       <p className="subtitle">Створи свій власний записник  контактів</p>
        <div className="about">
             <ul>
                 <li>з будь-якого пристрою</li>

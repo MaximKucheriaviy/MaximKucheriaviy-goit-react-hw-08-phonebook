@@ -10,7 +10,7 @@ import 'react-notifications/lib/notifications.css';
 
 const theme = {
   primaryColor: "#683B4B",
-  activeLink: "yellow"
+  activeLink: "#FF9E5E"
 };
 
 ReactDOM.createRoot(document.getElementById('root')).render(
