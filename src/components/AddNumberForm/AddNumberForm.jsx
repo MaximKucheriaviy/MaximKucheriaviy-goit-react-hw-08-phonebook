@@ -1,6 +1,5 @@
 import { nanoid } from "nanoid";
 import { useState, useRef } from "react";
-import { AddForm } from "./AddNumberForm.styled"
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
@@ -47,8 +46,8 @@ export const AddNumberForm = () => {
     }
 
     return(
-        <AddForm onSubmit={onSubmitHendler}>
-            <label htmlFor={nameInputId.current}>Name</label>
+        <form className="userForm" onSubmit={onSubmitHendler}>
+            <label className="topLabel" htmlFor={nameInputId.current}>Name</label>
             <input
                 type="text"
                 name="name"
@@ -73,7 +72,7 @@ export const AddNumberForm = () => {
             />
             <br />
             <button type="submit" disabled={name === "" || number === ""}>Add contact</button>
-        </AddForm>
+        </form>
     )
 }
 

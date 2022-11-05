@@ -1,6 +1,16 @@
 import styled from "styled-components";
 
 export const StyledMain = styled.main`
+    & h1{
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 61px;
+
+        text-align: center;
+    }
     & .userForm{
         width: 414px;
         margin-left: auto;
@@ -64,5 +74,29 @@ export const StyledMain = styled.main`
             text-align: center;
             color: #FF0707;
         }
+    }
+
+    & .contactLayout{
+        margin-top: 35px;
+        display: flex;
+        justify-content: space-between;
+
+        & .formThumb{
+            padding-top: 118px;
+        }
+
+        & .userForm{
+            margin-top: 0px;
+
+            & .topLabel{
+                margin-top: 0;
+            }
+        }
+    }
+
+    & .container{
+        padding-top: 76px;
+        width: 1164px;
+        margin:0 auto;
     }
 `

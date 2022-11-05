@@ -17,7 +17,6 @@ export const FindContactForm = () => {
 
     return(
         <VerticalForm onSubmit={event => event.preventDefault()}>
-            <label htmlFor={nameId.current}>Find contacts by name</label>
             <input 
                 id={nameId.current}
                 type="text" 

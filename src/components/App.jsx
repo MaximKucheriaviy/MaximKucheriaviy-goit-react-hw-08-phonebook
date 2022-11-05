@@ -5,6 +5,7 @@ import { Header } from "./Header/Header";
 import { Main } from "pages/Main";
 import { SignUp } from "pages/SignUp";
 import { LogIn } from "pages/LogIn";
+import { Contacts } from "pages/Contacts";
 import { logOut } from "redux/slices";
 import { useDispatch } from "react-redux";
 
@@ -34,8 +35,9 @@ export const App = () => {
       <Header token={token} logOut={logOutHendler}/>
       <Routes>
         <Route path="/" element={<Main/>}/>
-        <Route path="signup" element={!token ? <SignUp/> : <Navigate to="/"/>}/>
-        <Route path="login" element={!token ?<LogIn/> : <Navigate to="/"/>}/>
+        <Route path="signup" element={!token ? <SignUp/> : <Navigate to="/contacts"/>}/>
+        <Route path="login" element={!token ? <LogIn/> : <Navigate to="/contacts"/>}/>
+        <Route path="contacts" element={token ? <Contacts/> : <Navigate to="/login"/>}/>
       </Routes>
       <Loader isLoading={isLoading || userLoading}/>
     </div>

@@ -91,7 +91,7 @@ export const Header = ({token, logOut}) => {
                 <StyledLink to='signup'>Зареєструватись</StyledLink>
             </div> :
             <div className="userInfo">
-                <p>{userMail}</p>
+                <StyledLink to="contacts">{userMail}</StyledLink>
                 <button onClick={logOut}>Вийти</button>
             </div>
         }
