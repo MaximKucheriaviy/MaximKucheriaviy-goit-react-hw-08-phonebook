@@ -28,5 +28,25 @@ export class API{
         });
         return response;
     }
+    static createNewContact = async (token, name, number) => {
+        const response =  await axios({
+            method: "post",
+            url: `/contacts`,
+            headers: {'Authorization': token},
+            data: {
+                name,
+                number
+            }
+        });
+        return response;
+    }
+    static getContacts = async (token) => {
+        const response =  await axios({
+            method: "get",
+            url: `/contacts`,
+            headers: {'Authorization': token},
+        });
+        return response;
+    }
 }
 

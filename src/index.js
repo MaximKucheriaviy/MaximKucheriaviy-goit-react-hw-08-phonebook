@@ -8,7 +8,8 @@ import { ThemeProvider } from 'styled-components';
 import './index.css';
 
 const theme = {
-  primaryColor: "#683B4B"
+  primaryColor: "#683B4B",
+  activeLink: "yellow"
 };
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -15,7 +15,6 @@ import { useDispatch } from "react-redux";
 export const App = () => {
   const dispatch = useDispatch();
 
-  const isLoading = useSelector(state => state.contacts.isLoading);
   const userLoading = useSelector(state => state.userToken.isLoading);
   const token = useSelector(state => state.userToken.token);
 
@@ -39,7 +38,7 @@ export const App = () => {
         <Route path="login" element={!token ? <LogIn/> : <Navigate to="/contacts"/>}/>
         <Route path="contacts" element={token ? <Contacts/> : <Navigate to="/login"/>}/>
       </Routes>
-      <Loader isLoading={isLoading || userLoading}/>
+      <Loader isLoading={userLoading}/>
     </div>
   );
 }

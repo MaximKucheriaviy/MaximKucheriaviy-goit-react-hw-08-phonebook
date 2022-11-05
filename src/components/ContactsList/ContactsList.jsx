@@ -9,7 +9,7 @@ export const ContactsList = ({contacts, deleteContact}) => {
         return(
           <li key={item.id}>
             <span>{item.name}:</span> 
-            <span>{item.phone}</span> 
+            <span>{item.number}</span> 
             <button onClick={() => {deleteContact(item.id)}}>delete</button>
           </li>
         )

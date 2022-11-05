@@ -1,20 +1,17 @@
 import { nanoid } from "nanoid";
 import { useState, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { API } from "service/api";
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
-import { addContact } from "redux/operations";
 
-export const AddNumberForm = () => {
+export const AddNumberForm = (createContact) => {
     const nameInputId = useRef(nanoid());
     const telephoneInputId = useRef(nanoid());
+    
 
     const [name, setName] = useState("");
     const [number, setNumber] = useState("");
 
-    const dispatch = useDispatch();
-
-    const contacts = useSelector(state => state.contacts.items);
     const chageHendler = (event) => {
         const {value, name} = event.target;
         switch(name){
@@ -36,12 +33,7 @@ export const AddNumberForm = () => {
 
     const onSubmitHendler = (event) =>{
         event.preventDefault();
-        if(contacts.some(item => item.name.toLowerCase() === name.toLowerCase())){
-            alert(`${name} is already in contacts`);
-            clearForm();
-            return;
-        }
-        dispatch(addContact({name, phone: number}));
+        createContact(name, number);
         clearForm();
     }
 

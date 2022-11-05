@@ -59,6 +59,15 @@ const StyledLink = styled(NavLink)`
     line-height: 18px;
     color: white;
     text-decoration: none;
+    &.active {
+        color: ${props => props.theme.activeLink};
+        & .homeIcon{
+            stroke: ${props => props.theme.activeLink};
+            & path{
+            stroke: ${props => props.theme.activeLink};
+        }
+    }
+}
 `
 
 export const Header = ({token, logOut}) => {
