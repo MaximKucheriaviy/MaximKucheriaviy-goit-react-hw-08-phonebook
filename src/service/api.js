@@ -55,5 +55,17 @@ export class API{
         });
         return response;
     }
+    static updateContact = async (token, id, name, number) => {
+        const response =  await axios({
+            method: "patch",
+            url: `/contacts/${id}`,
+            headers: {'Authorization': token},
+            data: {
+                name,
+                number
+            }
+        });
+        return response;
+    }
 }
 

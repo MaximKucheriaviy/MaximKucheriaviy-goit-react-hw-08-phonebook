@@ -2,17 +2,14 @@ import { useRef } from "react"
 import { nanoid } from "nanoid";
 import { VerticalForm } from "./FindContactForm.styled"
 import PropTypes from "prop-types";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { chageFilter } from "redux/slices";
+import { useState } from "react";
 
-export const FindContactForm = () => {
+export const FindContactForm = ({setFilter}) => {
     const nameId = useRef(nanoid());
-    const dispatch = useDispatch();
-    const name = useSelector(state => state.filter);
+
     const chageHendler = (event) => {
         const {value} = event.target;
-        dispatch(chageFilter(value));
+        setFilter(value);
     }
 
     return(
@@ -21,7 +18,6 @@ export const FindContactForm = () => {
                 id={nameId.current}
                 type="text" 
                 name="name"
-                value={name}
                 onChange={chageHendler}
                 autoComplete="off"
             />

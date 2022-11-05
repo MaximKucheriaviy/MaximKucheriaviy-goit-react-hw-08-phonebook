@@ -5,11 +5,13 @@ import { ContactsList } from "components/ContactsList/ContactsList"
 import { API } from "service/api"
 import { useState, useEffect } from "react"
 import { useSelector } from "react-redux"
-
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import { filterContacts } from "service/functions"
 
 export const Contacts = () => {
     const token = useSelector(state => state.userToken.token);
     const [contacts, setContacts] = useState([]);
+    const [filter, setFilter] = useState("");
 
     useEffect(() => {
         async function getContacts(){
@@ -27,12 +29,14 @@ export const Contacts = () => {
     
 
     const createContact = async (name, number) => {
-        if(contacts.some(item => item.name.toLowerCase() === name.toLowerCase() || !name || !number)){;
+        if(contacts.some(item => item.name.toLowerCase() === name.toLowerCase() || !name || !number)){
+            NotificationManager.warning(`Спробуйте інше iм'я`, 'Такий контакт вже існує', 3000);
             return;
         }
         try{
             const response = await API.createNewContact(token, name, number);
             setContacts(prev => [...prev, response.data])
+            NotificationManager.success("", 'Контакт створено', 1000);
         }
         catch(err){
             console.log(err);
@@ -49,19 +53,19 @@ export const Contacts = () => {
         }
     }
 
-
     return <StyledMain>
         <div className="container">
             <h1>Електронний записник контактів</h1>
             <div className="contactLayout">
                 <div>
-                    <FindContactForm />
-                    <ContactsList contacts={contacts} deleteContact={deleteContact}/>
+                    <FindContactForm setFilter={setFilter}/>
+                    <ContactsList contacts={filterContacts(contacts, filter)} deleteContact={deleteContact}/>
                 </div>
                 <div className="formThumb">
                     <AddNumberForm createContact={createContact}/>
                 </div>
             </div>
         </div>
+        <NotificationContainer/>
     </StyledMain>
 }

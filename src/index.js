@@ -6,6 +6,7 @@ import { store } from 'redux/store';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import './index.css';
+import 'react-notifications/lib/notifications.css';
 
 const theme = {
   primaryColor: "#683B4B",
