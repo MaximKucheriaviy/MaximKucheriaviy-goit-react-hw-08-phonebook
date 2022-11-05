@@ -2,7 +2,6 @@ import { useRef } from "react"
 import { nanoid } from "nanoid";
 import { VerticalForm } from "./FindContactForm.styled"
 import PropTypes from "prop-types";
-import { useState } from "react";
 
 export const FindContactForm = ({setFilter}) => {
     const nameId = useRef(nanoid());
