@@ -24,8 +24,19 @@ export const Contacts = () => {
         getContacts(token);
     }, []);
 
-    const createContact = () => {
+    
 
+    const createContact = async (name, number) => {
+        if(contacts.some(item => item.name.toLowerCase() === name.toLowerCase() || !name || !number)){;
+            return;
+        }
+        try{
+            const response = await API.createNewContact(token, name, number);
+            setContacts(prev => [... prev, response.data])
+        }
+        catch(err){
+            console.log(err);
+        }
     }
 
 
@@ -34,11 +45,11 @@ export const Contacts = () => {
             <h1>Електронний записник контактів</h1>
             <div className="contactLayout">
                 <div>
-                    <FindContactForm createContact={createContact}/>
+                    <FindContactForm />
                     <ContactsList contacts={contacts}/>
                 </div>
                 <div className="formThumb">
-                    <AddNumberForm/>
+                    <AddNumberForm createContact={createContact}/>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@ import { API } from "service/api";
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 
-export const AddNumberForm = (createContact) => {
+export const AddNumberForm = ({createContact}) => {
     const nameInputId = useRef(nanoid());
     const telephoneInputId = useRef(nanoid());
     
