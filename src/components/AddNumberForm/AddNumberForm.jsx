@@ -1,14 +1,11 @@
 import { nanoid } from "nanoid";
 import { useState, useRef } from "react";
-import { API } from "service/api";
-import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 
 export const AddNumberForm = ({createContact}) => {
     const nameInputId = useRef(nanoid());
     const telephoneInputId = useRef(nanoid());
     
-
     const [name, setName] = useState("");
     const [number, setNumber] = useState("");
 

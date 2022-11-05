@@ -1,5 +1,4 @@
 import axios from "axios";
-
 axios.defaults.baseURL = "https://connections-api.herokuapp.com"
 
 
@@ -44,6 +43,14 @@ export class API{
         const response =  await axios({
             method: "get",
             url: `/contacts`,
+            headers: {'Authorization': token},
+        });
+        return response;
+    }
+    static deleteContact = async (token, id) => {
+        const response =  await axios({
+            method: "delete",
+            url: `/contacts/${id}`,
             headers: {'Authorization': token},
         });
         return response;
