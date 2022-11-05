@@ -36,7 +36,7 @@ export const AddNumberForm = ({createContact}) => {
 
     return(
         <form className="userForm" onSubmit={onSubmitHendler}>
-            <label className="topLabel" htmlFor={nameInputId.current}>Name</label>
+            <label className="topLabel" htmlFor={nameInputId.current}>Ім'я</label>
             <input
                 type="text"
                 name="name"
@@ -48,7 +48,7 @@ export const AddNumberForm = ({createContact}) => {
                 value={name}
             /> 
             <br />
-            <label htmlFor={telephoneInputId.current}>Telephone</label>  
+            <label htmlFor={telephoneInputId.current}>Телефон</label>  
             <input
                 type="tel"
                 name="number"
