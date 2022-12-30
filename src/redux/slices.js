@@ -113,6 +113,7 @@ export const userSlice = createSlice({
         },
         [loginUser.fulfilled](state, action){
             state.isLoading = false;
+            console.log(action.payload);
             state.token = action.payload.token;
             localStorage.setItem("userToken", JSON.stringify(action.payload.token));
         },
