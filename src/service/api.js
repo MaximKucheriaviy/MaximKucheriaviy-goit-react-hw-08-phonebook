@@ -1,5 +1,5 @@
 import axios from "axios";
-axios.defaults.baseURL = "https://connections-api.herokuapp.com"
+axios.defaults.baseURL = "https://phonebookserver.onrender.com"
 
 
 export class API{
